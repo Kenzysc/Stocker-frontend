@@ -10,65 +10,7 @@ import Hero from './Components/Hero/Hero';
 
 
 function App() {
-
-  const [search, setSearch] = useState<string>("hello");
-  const [portfolioValues, setPortfolioValues] = useState<string[]>([]);
-  const  [searchResult, setSearchResult] = useState<CompanySearch[]>([]);
-  const [serverError, setServerError] = useState<string | null>(null);
-
-  const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
-      setSearch(e.target.value);
-      console.log(e);
-  };
-
-  const onPortfolioCreate = (e: any) => {
-    e.preventDefault();
-    const exists = portfolioValues.find((value) => value === e.target[0].value);
-    if(exists) return;
-    const updatePortfolio = [...portfolioValues, e.target[0].value];
-    setPortfolioValues(updatePortfolio);
-  }
-
-  const onPortfolioDelete = (e: any) => {
-    e.preventDefault(); // its so that our page doesnt load when we submit it and blow away all our data
-    
-    const removed = portfolioValues.filter((value) => {
-      return value !== e.target[0].value;
-    });
-
-    setPortfolioValues(removed);
-  }
-
-  const onSearchSubmit = async (e: SyntheticEvent) => { // "e: SyntheticEvent" handles all event. import it also or (e: MouseEvent<HTMLButtonElement>
-    e.preventDefault();
-    const result = await searchCompanies(search);  
-   
-    if(typeof result === "string") {
-      setServerError(result);
-    } else if (Array.isArray(result.data)) {
-      setSearchResult(result.data);
-    }
-   // console.log(e);
-    console.log(searchResult);
-  };
-
-  return (
-    <div className="App">
-      <Navbar />
-      <Hero />
-      <Search 
-        onSearchSubmit={onSearchSubmit} 
-        search={search} 
-        handleSearchChange={handleSearchChange} />
-         {/* conditional render */}
-      {serverError && <h1>{serverError}</h1>}  
-      <ListPortfolio 
-        portfolioValues={portfolioValues} 
-        onPortfolioDelete={onPortfolioDelete} 
-      />
-      <CardList searchResults={searchResult} onPortfolioCreate={onPortfolioCreate} />
-    </div>
-  );
+  return <></>
 }
 
 export default App;

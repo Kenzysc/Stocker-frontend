@@ -13,25 +13,24 @@ interface Props {
   onPortfolioCreate?: (e: SyntheticEvent) => void;
 }
 
-const Card: React.FC<Props> = ({companyName, ticker, price, searchResult, onPortfolioCreate}: Props): JSX.Element => {
+const Card: React.FC<Props> = ({companyName, ticker, price, searchResult, onPortfolioCreate, id}: Props): JSX.Element => {
   return (
-    // <img src={logo} />
-    <div className='card'>
-        <div className='details'>
-            <h2>
-              {searchResult?.name} ({searchResult?.symbol}) 
-              {/* without the ? in searchResult?.name, it gives an undefined error coz I guess TS isnt sure of the type */}
-            </h2>
-            <p>${searchResult?.currency}</p>
-        </div>
-        <div className='info'>
-            {searchResult?.exchangeShortName} - {searchResult?.stockExchange}
-        </div>
-        <p>
-          <AddPortfolio 
-            onPortfolioCreate={onPortfolioCreate} 
-            symbol={searchResult?.symbol} />
-        </p>
+    <div
+      className="flex flex-col items-center justify-between w-full p-6 bg-slate-100 rounded-lg md:flex-row"
+      key={id}
+      id={id}
+    >
+      <h2 className="font-bold text-center text-black md:text-left">
+        {searchResult?.name} ({searchResult?.symbol})
+      </h2>
+      <p className="text-black">{searchResult?.currency}</p>
+      <p className="font-bold text-black">
+        {searchResult?.exchangeShortName} - {searchResult?.stockExchange}
+      </p>
+      <AddPortfolio
+        onPortfolioCreate={onPortfolioCreate}
+        symbol={searchResult?.symbol}
+      />
     </div>
   )
 }
