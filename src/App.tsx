@@ -1,16 +1,13 @@
-import React, { ChangeEvent, useState, MouseEvent, SyntheticEvent } from 'react';
+import { Outlet } from "react-router";
 import "./App.css";
-import CardList from "./Components/CardList/CardList";
-import Search from "./Components/Search/Search";
-import { CompanySearch } from './company';
-import { searchCompanies } from './api';
-import ListPortfolio from './Components/Portfolio/ListPortfolio/ListPortfolio';
-import Navbar from './Components/Navbar/Navbar';
-import Hero from './Components/Hero/Hero';
-
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
-  return <></>
+  return <>
+  <Navbar />
+  {/* outlet is where all the pages are going 2b displayed */}
+  <Outlet /> 
+  </>;
 }
 
 export default App;

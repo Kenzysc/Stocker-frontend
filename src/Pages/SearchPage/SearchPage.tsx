@@ -11,9 +11,9 @@ type Props = {}
 
 const SearchPage = (props: Props) => {
 
-    const [search, setSearch] = useState<string>("hello");
+  const [search, setSearch] = useState<string>("hello");
   const [portfolioValues, setPortfolioValues] = useState<string[]>([]);
-  const  [searchResult, setSearchResult] = useState<CompanySearch[]>([]);
+  const [searchResult, setSearchResult] = useState<CompanySearch[]>([]);
   const [serverError, setServerError] = useState<string | null>(null);
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -54,8 +54,6 @@ const SearchPage = (props: Props) => {
 
   return (
     <div className="App">
-      <Navbar />
-      <Hero />
       <Search 
         onSearchSubmit={onSearchSubmit} 
         search={search} 
