@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import {FaHome} from "react-icons/fa"; //fa is font awesome
 
 interface Props {}
 
@@ -18,11 +20,23 @@ const Sidebar = (props: Props) => {
 
               <div className="md:flex-col md:min-w-full flex flex-col list-none">
 
-                <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
-
-                  Home
-
-                </h6>
+                {/* flex medium min width full text-xs padding-top padding-bottom. flex applies the same css as block */}
+                <Link 
+                    to="company-profile" 
+                    className="md:min-w-full text-blueGray-500 text-medium uppercase font-bold flex pt-1 pb-4 no-underline"
+                >
+                    {/* you can also go on the react-icons website and choose an icon */}
+                    {/* using block instead of flex added the icon abit above the text */}
+                    <FaHome />
+                    <h6 className="ml-3">Company Profile</h6>
+                </Link>
+                <Link 
+                    to="income-statement" 
+                    className="md:min-w-full text-blueGray-500 text-medium uppercase font-bold flex pt-1 pb-4 no-underline"
+                >
+                    <FaHome />
+                    <h6 className="ml-3">Income Statement</h6>
+                </Link>
 
               </div>
 
