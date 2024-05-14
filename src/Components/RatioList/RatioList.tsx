@@ -1,30 +1,13 @@
 import React from 'react'
-import { TestDataCompany } from '../Table/testData'
+import { CompanyKeyMetrics } from '../../company';
 
 interface Props {
+    config: any;
+    data: any;
+};
 
-}
-
-const data = TestDataCompany[0];
-
-type Company = typeof data;
-
-const config = [
-    {
-        label: "DCF",
-        render: (company: Company) => company.companyName,
-        subTitle: "This is the company name",
-    },
-    {
-        label: "DCF",
-        render: (company: Company) => company.companyName,
-        subTitle: "This is the company name",
-    },
-]
-
-
-const RatioList = (props: Props) => {
-    const renderedRows = config.map(row => {
+const RatioList = ({config, data}: Props) => {
+    const renderedRows = config.map((row: any) => {
         return (
             <li className="py-3 sm:py-4">
                 <div className="flex items-center space-x-4">
@@ -44,7 +27,7 @@ const RatioList = (props: Props) => {
         );
     });
   return (
-    <div className="bg-white shadow rounded-lg mb-4 p-4 sm:p-6 h-full">
+    <div className="bg-white shadow rounded-lg mb-4 ml-4 mt-5 p-4 sm:p-6 h-full">
         <ul className="divide-y divided-gray-200">
             {renderedRows}
         </ul>
