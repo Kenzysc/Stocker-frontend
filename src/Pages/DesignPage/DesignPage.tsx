@@ -23,7 +23,7 @@ const DesignPage = (props: Props) => {
         </h2>
         <RatioList data={testIncomeStatementData} config={tableConfig} />
         <h3>RationList - </h3>
-        <Table />
+        <Table data={testIncomeStatementData} config={tableConfig} />
         <h3>
             Table- Table takes in a configuration object and company data as pareams. 
             Use the config to style your data. 

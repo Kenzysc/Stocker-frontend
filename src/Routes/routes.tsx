@@ -7,6 +7,7 @@ import CompanyProfile from "../Components/CompanyProfile/CompanyProfile";
 import IncomeStatement from "../Components/IncomeStatement/IncomeStatement";
 import Table from "../Components/Table/Table";
 import DesignPage from "../Pages/DesignPage/DesignPage";
+import BalanceSheet from "../Components/BalanceSheet/BalanceSheet";
 
 export const router = createBrowserRouter([
     {
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
               children: [ //nested routes
                 { path: "company-profile", element: <CompanyProfile /> },
                 { path: "income-statement", element: <IncomeStatement /> },
+                { path: "balance-sheet", element: <BalanceSheet /> },
               ]
             }
         ]

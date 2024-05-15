@@ -14,7 +14,7 @@ const CompanyPage = (props: Props) => {
 
     useEffect(() => {
         const getProfileInit = async () => {
-            const result = await getCompanyProfile(ticker!); //! is non-null. ? is optional
+            const result = await getCompanyProfile(ticker!); //! is non-null or undefined. ? is optional
             setCompany(result?.data[0]);
         };
         getProfileInit();
