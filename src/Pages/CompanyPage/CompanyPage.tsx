@@ -7,6 +7,7 @@ import CompanyDashboard from '../../Components/CompanyDashboard/CompanyDashboard
 import Tile from '../../Components/Tile/Tile';
 import Spinner from '../../Components/Spinner/Spinner';
 import CompFinder from '../../Components/CompFinder/CompFinder';
+import TenKFinder from '../../Components/TenKFinder/TenKFinder';
 
 interface Props {};
 
@@ -33,7 +34,8 @@ const CompanyPage = (props: Props) => {
             <Tile title="Sector" subTitle={company.sector} />
             <Tile title="Discounted Cashflow" subTitle={company.dcf.toString()} />
             <Tile title="Chief Executive Officer" subTitle={company.ceo} />
-            <CompFinder ticker={company.symbol} />
+            <CompFinder ticker={company.symbol} /> {/** not showing up coz its a premium API feature **/}
+            <TenKFinder ticker={company.symbol} />
             <p className="bg-white shadow rounded text-medium text-gray-900 p-3 mt-1 m-4">
               {company.description}
             </p>
