@@ -24,7 +24,7 @@ const TenKFinder = ({ticker}: Props) => {
                 return <TenKFinderItem tenK={tenK} />
             }) 
         ) : (
-                <Spinner />
+            <Spinner />
         )}
     </div>
 }

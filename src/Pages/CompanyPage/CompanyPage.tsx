@@ -8,6 +8,7 @@ import Tile from '../../Components/Tile/Tile';
 import Spinner from '../../Components/Spinner/Spinner';
 import CompFinder from '../../Components/CompFinder/CompFinder';
 import TenKFinder from '../../Components/TenKFinder/TenKFinder';
+import { formatRatio } from '../../Components/Helpers/NumberFormating';
 
 interface Props {};
 
@@ -30,9 +31,9 @@ const CompanyPage = (props: Props) => {
         <Sidebar />
         <CompanyDashboard ticker={ticker!} >
             <Tile title="Company Name" subTitle={company.companyName} />
-            <Tile title="Price" subTitle={company.price.toString()} />
+            <Tile title="Price" subTitle={"$" + company.price.toString()} />
             <Tile title="Sector" subTitle={company.sector} />
-            <Tile title="Discounted Cashflow" subTitle={company.dcf.toString()} />
+            <Tile title="Discounted Cashflow" subTitle={"$" + formatRatio(company.dcf).toString()} />
             <Tile title="Chief Executive Officer" subTitle={company.ceo} />
             <CompFinder ticker={company.symbol} /> {/** not showing up coz its a premium API feature **/}
             <TenKFinder ticker={company.symbol} />
