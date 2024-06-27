@@ -10,9 +10,7 @@ interface Props {
 
 const CardList: React.FC<Props> = ({ searchResults, onPortfolioCreate } : Props): JSX.Element => {
   return (
-    <div>
-        <Card searchResult={{currency: "Naira", exchangeShortName: "NSE", name: "SpaceY", stockExchange: "Nigeria Stock Exchange", symbol: "SPY"}} onPortfolioCreate={onPortfolioCreate} />
-        <Card searchResult={{currency: "Naira", exchangeShortName: "NSE", name: "SpaceZ", stockExchange: "Nigeria Stock Exchange", symbol: "SPZ"}} onPortfolioCreate={onPortfolioCreate} />        
+    <div>        
         {searchResults.length > 0 ? (
           searchResults.map((result) => {
             return <Card id={result.symbol} key={uuidv4()} searchResult={result} onPortfolioCreate={onPortfolioCreate} />;

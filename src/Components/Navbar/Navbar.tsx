@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.png';
+import logo from './logo.jpg';
 import { Link } from 'react-router-dom';
 
 interface Props {}
