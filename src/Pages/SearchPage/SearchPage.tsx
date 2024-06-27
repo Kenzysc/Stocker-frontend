@@ -57,7 +57,8 @@ const SearchPage = (props: Props) => {
       <Search 
         onSearchSubmit={onSearchSubmit} 
         search={search} 
-        handleSearchChange={handleSearchChange} />
+        handleSearchChange={handleSearchChange} 
+      />
          {/* conditional render */}
       {serverError && <h1>{serverError}</h1>}  
       <ListPortfolio 
