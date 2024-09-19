@@ -1,4 +1,4 @@
-# The Stocker App
+# [The Stocker App](https://brave-island-0c4462f0f.5.azurestaticapps.net/)
 
 ## Description
 
